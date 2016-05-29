@@ -1,0 +1,296 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sholarplus</title>
+  <base href="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="css/ngProgress.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/toaster.css">
+
+<link rel="apple-touch-icon" href="pages/ico/60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="pages/ico/76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="pages/ico/120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="pages/ico/152.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/jquery-metrojs/MetroJs.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/codrops-dialogFx/dialog.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/codrops-dialogFx/dialog-sandra.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/jquery-nouislider/jquery.nouislider.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+<link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+<link class="main-stylesheet" href="pages/css/pages.css" rel="stylesheet" type="text/css"/>
+
+
+<script type="text/javascript" src="js/firebase.js">
+
+</script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fostrap {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+.fostrap-logo {
+  width: 100px;
+  margin-bottom:15px
+}
+h1.heading {
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+@media (min-width: 450px) {
+  h1.heading {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  h1.heading {
+    font-size: 3.05em;
+  }
+}
+@media (min-width: 900px) {
+  h1.heading {
+    font-size: 3.25em;
+    margin: 0 0 0.3em;
+  }
+}
+.card {
+  display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    transition: box-shadow .25s;
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover;
+  transition: all .25s ease;
+}
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
+</style>
+<style>
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+display: none !important;
+}
+</style>
+<script src="js/firebase.js"></script>
+<script>
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBczjxTgvOZv4LaSLTzJmqUWVzFF9T-meQ",
+  authDomain: "scholarplus-c9862.firebaseapp.com",
+  databaseURL: "https://scholarplus-c9862.firebaseio.com",
+  storageBucket: "scholarplus-c9862.appspot.com",
+};
+firebase.initializeApp(config);
+</script>
+</head>
+<body ng-cloak>
+
+<body class="fixed-header no-header">
+<header>
+<div class="container">
+<a class="logo" href="http://scholar.teamsata.xyz/">
+<img src="assets/img/logo_white.png" width="100" height="auto">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="link text-white " href="#/news">News</a>
+                    </li>
+                    <li>
+                        <a class="link text-white " href="#/scholarship">Scholarlist</a>
+                    </li>
+                    <li>
+                        <a class="link text-white " href="#/channels">Channels</a>
+                    </li>
+                    <li>
+                        <a class="link text-white " href="#/login">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+</div>
+</header>
+  <div class="container" ng-controller="HomeCtrl">
+      <md-toolbar layout="row">
+        <h1>Scholarplus</h1>
+      </md-toolbar>
+
+      <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <!-- <div ng-view></div> -->
+        <ui-view></ui-view>
+
+    </div>
+      </div>
+
+<div data-loading></div>
+<toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+
+<section class="p-b-55 p-t-75 xs-p-b-20 bg-master-darker ">
+<div class="container">
+<div class="row">
+<div class="col-sm-4 col-xs-12 xs-m-b-40">
+<img src="assets/img/logo_white.png" width="100" height="auto" data-src-retina="assets/images/logo_white_2x.png" class="alt" alt="">
+</div>
+
+  <div class="col-sm-2 col-xs-6 xs-m-b-20">
+<h6 class="font-montserrat text-uppercase fs-14 text-white p-b-10">About </h6>
+<ul class="no-style">
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Our team</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Our location</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Contact Us</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">About Us</a></li>
+</ul>
+</div>
+<div class="col-sm-2 col-xs-6 xs-m-b-20">
+<h6 class="font-montserrat text-uppercase fs-14 text-white p-b-10">News Feed </h6>
+<ul class="no-style">
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Education</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Scholarship</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Abroad</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Insight</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Technology</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Science</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Jobs</a></li>
+</ul>
+</div>
+<div class="col-sm-2 col-xs-6 xs-m-b-20">
+<h6 class="font-montserrat text-uppercase fs-14 text-white p-b-10">Scholarships </h6>
+<ul class="no-style">
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Technology</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Enginnering</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Social</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Architecture</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Culture</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Underfortunate</a></li>
+</ul>
+</div>
+
+<div class="col-sm-2 col-xs-6 xs-m-b-20">
+<h6 class="font-montserrat text-uppercase fs-14 text-white p-b-10">Connect </h6>
+<ul class="no-style">
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Facebook</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">Twitter</a></li>
+<li class="m-b-5 no-padding"><a href="#" class="link text-white">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<p class="fs-12 hint-text p-t-10 text-white">Copyright &copy; 2014. All Rights Reserved </p>
+</div>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-resource.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angularfire.js"></script>
+<script src="js/ngProgress.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/angular-md5.js"></script>
+<script src="js/bootstrap-3.1.1.min.js"></script>
+<script src="js/ui.bootstrap-tpls.js"></script>
+
+<script src="js/ui-bootstrap.js"></script>
+<script src="js/toaster.js"></script>
+<script src="app.js"></script>
+<script src="app/home.js"></script>
+<script src="app/news.js"></script>
+<script src="app/scholarship.js"></script>
+<script ng-if="admin" src="app/admin.js"></script>
+
+<script src="app/auth/auth.controller.js"></script>
+<script src="app/users/users.service.js"></script>
+<script src="app/users/profile.controller.js"></script>
+<script src="app/channels/channels.controller.js"></script>
+<script src="app/channels/messages.service.js"></script>
+<script src="app/channels/messages.controller.js"></script>
+
+
+
+
+
+</body>
+</html>

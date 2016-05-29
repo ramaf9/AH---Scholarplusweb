@@ -1,0 +1,77 @@
+<section class="wrapper">
+
+    <div class="container-fostrap">
+    <button ng-if="admin" type="button" class="btn btn-danger fa fa-plus" ng-click="open($event);"></button>
+    <div class="row"></div>
+    <br/>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-12">
+                            <div class="card">
+                                <a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                <img src="{{product.photopath}}" />
+                              </a>
+                              <div class="card-read-more dropup" style="text-align: left;">
+                                    <a ng-if="admin" href="forecast" class="btn" data-toggle="dropdown"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+
+                                        <ul class="dropdown-menu">
+                                        <li><a style="cursor: pointer;" ng-click="open(key,c);">Edit</a></li>
+                                        <li><a style="cursor: pointer;" ng-click="remove(key);">Remove</a></li>
+                                      </ul>
+
+                                </div>
+                                <div class="card-content">
+
+                                    <h4 class="card-title">
+                                        <a href="{{key}}"> {{product.nama}}
+                                      </a>
+                                    </h4>
+                                    <h4>Deskripsi</h4>
+                                    <br>
+                                    <p>
+                                        {{product.deskripsi}}
+                                    </p>
+                                    <h4>Website</h4>
+                                    <br>
+                                    <p>
+                                        {{product.web}}
+                                    </p>
+                                    <h4>Instansi</h4>
+                                    <br>
+                                    <p>
+                                    {{product.instansi}}
+                                    </p>
+                                    <h4>Due Date</h4>
+                                    <br>
+                                    <p>
+                                    {{product.duedate}}
+                                    </p>
+                                    <h4>Persyaratan</h4>
+                                    <br>
+                                    
+                                    <p>
+                                        Jurusan : {{product.kuantitatif.bidang}}
+                                    </p>
+                                    <p>
+                                        IPK : {{product.kuantitatif.ipk}}
+                                    </p>
+                                    <p>
+                                        IPK : {{product.kuantitatif.semester}}
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                                                    </div>
+                                <div class="card-read-more">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

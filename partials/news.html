@@ -1,0 +1,53 @@
+<section class="wrapper">
+
+    <div class="container-fostrap">
+    <button ng-if="admin" type="button" class="btn btn-danger fa fa-plus" ng-click="open($event);"></button>
+    <div class="row"></div>
+    <br/>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4" ng-repeat="(key,c) in products">
+                            <div class="card">
+                                <a class="img-card" href="#/news/{{key}}">
+                                <img src="{{c.photopath}}" />
+                              </a>
+                              <div class="card-read-more dropup" style="text-align: left;">
+                                    <a ng-if="admin" href="forecast" class="btn" data-toggle="dropdown"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+
+                                        <ul class="dropdown-menu">
+                                        <li><a style="cursor: pointer;" ng-click="open(key,c);">Edit</a></li>
+                                        <li><a style="cursor: pointer;" ng-click="remove(key);">Remove</a></li>
+                                      </ul>
+
+                                </div>
+                                <div class="card-content">
+
+                                    <h4 class="card-title">
+                                        <a href="#/news/{{key}}"> {{c.nama}}
+                                      </a>
+                                    </h4>
+                                    <p class="">
+                                        {{c.deskripsi | limitTo:120}}
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="" class="btn btn-link btn-block">
+
+                                    </a>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="" class="btn btn-link btn-block">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

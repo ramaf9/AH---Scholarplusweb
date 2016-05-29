@@ -1,0 +1,142 @@
+<div class="modal-header">
+
+            <h3 class="modal-title">Update Beasiswa!</h3>
+        </div>
+        <div class="modal-body">
+           <!--  <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul> -->
+            <!-- Selected: <b>{{ selected.item }}</b> -->
+              <form name="rama" novalidate>
+            <label for="">Nama Beasiswa</label>
+            <input class="form-control" ng-model="bea.nama" placeholder="Nama beasiswa">
+            <label for="">Deskripsi Beasiswa</label>
+            <textarea class="form-control" ng-model="bea.deskripsi" placeholder="Deskripsi beasiswa"></textarea>
+            <label for="">Foto/logo Beasiswa</label>
+            <input type="file" file-model="bea.photopath" placeholder="Foto beasiswa"><br>
+            <label for="">Instansi Penyedia</label>
+            <input class="form-control" ng-model="bea.instansi" placeholder="Nama instansi">
+            <label for="">Web Beasiswa</label>
+            <input class="form-control" ng-model="bea.web" placeholder="Web beasiswa">
+            <label for="">Starting date</label>
+            <input class="form-control" ng-model="bea.startdate" placeholder="DD/MM/YYYY">
+            <label for="">Due Date</label>
+            <input class="form-control" ng-model="bea.duedate" placeholder="DD/MM/YYYY">
+            <label for="">Jenis Beasiswa</label>
+            <div class="panel panel-default">
+            <div class="panel-body">
+               <div class="btn-group btn-input clearfix">
+                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                   <input data-bind="label" ng-model="bea.jenis">&nbsp;<span class="caret"></span>
+                 </button>
+                 <ul class="dropdown-menu" role="menu">
+                   <li><a href="#">Full tuition</a></li>
+                   <li><a href="#">Half tuition</a></li>
+                   <li><a href="#">Exchange programs</a></li>
+                 </ul>
+               </div>
+             </div>
+          </div>
+
+            <label for="">Asal Beasiswa</label>
+            <div class="panel panel-default">
+            <div class="panel-body">
+               <div class="btn-group btn-input clearfix">
+                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                   <input data-bind="label" ng-model="bea.asal">&nbsp;<span class="caret"></span>
+                 </button>
+                 <ul class="dropdown-menu" role="menu">
+                   <li><a href="#">Dalam negeri</a></li>
+                   <li><a href="#">Luar negeri</a></li>
+                 </ul>
+               </div>
+             </div>
+          </div>
+
+            <label for="">Kategori Umum</label>
+            <div class="panel panel-default">
+            <div class="panel-body">
+               <div class="btn-group btn-input clearfix">
+
+                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                   <input data-bind="label" ng-model="bea.kategori">&nbsp;<span class="caret"></span>
+                 </button>
+                 <ul class="dropdown-menu" role="menu">
+                   <li><a href="#">Mampu</a></li>
+                   <li><a href="#">Tidak mampu</a></li>
+                   <li><a href="#">Umum</a></li>
+                 </ul>
+               </div>
+             </div>
+          </div>
+          <style>
+              .btn-input {
+                  display: block;
+              }
+
+            .btn-input .btn.form-control {
+                text-align: left;
+            }
+
+            .btn-input .btn.form-control span:first-child {
+               left: 10px;
+               overflow: hidden;
+               position: absolute;
+               right: 25px;
+            }
+
+            .btn-input .btn.form-control .caret {
+               margin-top: -1px;
+               position: absolute;
+               right: 10px;
+               top: 50%;
+            }
+          </style>
+          <script>
+          $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
+
+      var $target = $( event.currentTarget );
+
+      $target.closest( '.btn-group' )
+         .find( '[data-bind="label"]' ).val( $target.text() )
+            .end()
+         .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+      return false;
+
+   });
+          </script>
+
+            <label for="">Persyaratan</label>
+            <div class="persyaratan" style="width:100%;padding-left:10%;">
+            <label for="">Kuantitatif</label>
+            <input type="text" class="form-control" ng-model="bea.kuantitatif.bidang" placeholder="Bidang persyaratan">
+            <input type="text" class="form-control" ng-model="bea.kuantitatif.ipk" placeholder="IPK minimal">
+            <input type="text" class="form-control" ng-model="bea.kuantitatif.semester" placeholder="Semester minimal">
+
+
+          <label for="">Kualitatif</label>
+          <fieldset  data-ng-repeat="c in persyaratan">
+            <input type="text" class="form-control" ng-model="bea.persyaratankualitatif[$index]" placeholder="Persyaratan yang dibutuhkan">
+            <button class="addfields btn btn-sm btn-success fa fa-plus pull-right" ng-show="$last" ng-click="addNewChoice(persyaratan)"></button>
+            <button class="remove btn btn-sm btn-danger fa fa-minus pull-right" ng-show="$last" ng-click="removeChoice(persyaratan)"></button>
+          </fieldset>
+            </div>
+          <label for="">Berkas</label>
+          <fieldset  data-ng-repeat="d in berkas">
+          <input type="text" class="form-control" ng-model="bea.berkas[$index]" placeholder="Berkas yang dibutuhkan">
+          <button class="addfields btn btn-sm btn-success fa fa-plus pull-right" ng-show="$last" ng-click="addNewChoice(berkas)"></button>
+          <button class="remove btn btn-sm btn-danger fa fa-minus pull-right" ng-show="$last" ng-click="removeChoice(berkas)"></button>
+        </fieldset>
+
+
+  </form>
+
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok(bea)">{{buttonText}}</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>

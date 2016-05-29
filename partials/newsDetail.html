@@ -1,0 +1,48 @@
+<section class="wrapper">
+
+    <div class="container-fostrap">
+    <button ng-if="admin" type="button" class="btn btn-danger fa fa-plus" ng-click="open($event);"></button>
+    <div class="row"></div>
+    <br/>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                            <div class="card">
+                                <a class="img-card">
+                                <img src="{{product.photopath}}" />
+                              </a>
+                              <div class="card-read-more dropup" style="text-align: left;">
+                                    <a ng-if="admin" href="forecast" class="btn" data-toggle="dropdown"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+
+                                        <ul class="dropdown-menu">
+                                        <li><a style="cursor: pointer;" ng-click="open(key,c);">Edit</a></li>
+                                        <li><a style="cursor: pointer;" ng-click="remove(key);">Remove</a></li>
+                                      </ul>
+
+                                </div>
+                                <div class="card-content">
+
+                                    <h4 class="card-title">
+                                        <a href="{{key}}"> {{product.nama}}
+                                      </a>
+                                    </h4>
+                                    <p class="">
+                                        {{product.deskripsi}}
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                                                    </div>
+                                <div class="card-read-more">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

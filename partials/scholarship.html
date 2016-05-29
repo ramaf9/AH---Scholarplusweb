@@ -1,0 +1,76 @@
+<section class="wrapper">
+
+    <div class="container-fostrap">
+    <button ng-if="admin" type="button" class="btn btn-danger fa fa-plus" ng-click="open($event);"></button>
+    <div class="row"></div>
+ <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+		    <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span id="search_concept">Filter by</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains">IPK</a></li>
+                      <li><a href="#its_equal">Jurusan</a></li>
+                      <li><a href="#greather_than">Semester</a></li>
+                     
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+	</div>
+    <br/>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4" ng-repeat="(key,c) in products">
+                            <div class="card">
+                                <a class="img-card" href="#/scholarship/{{key}}">
+                                <img src="{{c.photopath}}" />
+                              </a>
+                              <div class="card-read-more dropup" style="text-align: left;">
+                                    <a ng-if="admin" href="forecast" class="btn" data-toggle="dropdown"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+
+                                        <ul class="dropdown-menu">
+                                        <li><a style="cursor: pointer;" ng-click="open(key,c);">Edit</a></li>
+                                        <li><a style="cursor: pointer;" ng-click="remove(key);">Remove</a></li>
+                                      </ul>
+
+                                </div>
+                                <div class="card-content">
+
+                                    <h4 class="card-title">
+                                        <a href="#/scholarship/{{key}}"> {{c.nama}}
+                                      </a>
+                                    </h4>
+                                    <p class="">
+                                        {{c.deskripsi | limitTo:120}}
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="" class="btn btn-link btn-block">
+
+                                    </a>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="" class="btn btn-link btn-block">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
